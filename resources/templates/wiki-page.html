@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="ui container">
-  <h1 class="ui header">Hello, wiki!</h1>
+  <h1 class="ui header">{{title}}</h1>
+  {{body|markdown}}
 </div>
 {% endblock %}

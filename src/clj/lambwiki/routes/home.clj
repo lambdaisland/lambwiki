@@ -1,17 +1,16 @@
 (ns lambwiki.routes.home
-  (:require [lambwiki.layout :as layout]
-            [compojure.core :refer [defroutes GET]]
-            [ring.util.http-response :as response]
-            [clojure.java.io :as io]))
+  (:require [compojure.core :refer [defroutes GET]]
+            [lambwiki.db.core :refer [find-page-by-uri-slug]]
+            [lambwiki.layout :as layout]
+            [ring.util.http-response :refer [found]]))
 
-(defn home-page []
+(defn wiki-page [page]
   (layout/render
-    "home.html" {:docs (-> "docs/docs.md" io/resource slurp)}))
-
-(defn about-page []
-  (layout/render "about.html"))
+    "wiki-page.html" page))
 
 (defroutes home-routes
-  (GET "/" [] (home-page))
-  (GET "/about" [] (about-page)))
-
+  (GET "/" []
+    (found "/home"))
+  (GET "/:uri_slug" [uri_slug]
+    (if-let [page (find-page-by-uri-slug {:uri_slug uri_slug})]
+      (wiki-page page))))
