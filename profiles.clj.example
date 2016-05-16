@@ -1,0 +1,2 @@
+{:profiles/dev  {:env {:database-url "jdbc:postgresql://localhost/lambwiki_dev?user=arne&password=arne"}}
+ :profiles/test {:env {:database-url "jdbc:postgresql://localhost/lambwiki_test?user=arne&password=arne"}}}
