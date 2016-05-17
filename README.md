@@ -50,4 +50,6 @@ To start a web server for the application, run:
 
 ## License
 
-Copyright © 2016 FIXME
+Copyright © 2016 Arne Brasseur
+
+[Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/")

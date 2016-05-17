@@ -1,7 +1,9 @@
 (defproject lambwiki "0.1.0-SNAPSHOT"
 
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "A simple wiki application as seen in the Lambda Island episode Introduction to Luminus, part 1"
+  :url "https://github.com/lambdaisland/lambwiki"
+  :license {:name "Mozilla Public License 2.0"
+            :url "https://www.mozilla.org/en-US/MPL/2.0/"}
 
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [selmer "1.0.4"]
@@ -42,7 +44,7 @@
   :target-path "target/%s/"
   :profiles
   {:uberjar {:omit-source true
-             
+
              :aot :all
              :uberjar-name "lambwiki.jar"
              :source-paths ["env/prod/clj"]
@@ -54,8 +56,8 @@
                                  [ring/ring-devel "1.4.0"]
                                  [pjstadig/humane-test-output "0.8.0"]]
                   :plugins      [[com.jakemccrary/lein-test-refresh "0.14.0"]]
-                  
-                  
+
+
                   :source-paths ["env/dev/clj" "test/clj"]
                   :resource-paths ["env/dev/resources"]
                   :repl-options {:init-ns user}
