@@ -1,6 +1,6 @@
 (ns lambwiki.routes.home
   (:require [compojure.core :refer [defroutes GET POST]]
-            [lambwiki.db.core :refer [find-page-by-uri-slug]]
+            [lambwiki.db.core :refer [create-revision! find-page-by-uri-slug]]
             [lambwiki.layout :as layout]
             [ring.util.http-response :refer [found]]))
 
@@ -25,4 +25,9 @@
       (edit-page page)))
 
   ;; submit the form, creating a new revision
-  (POST "/:uri_slug" _))
+  (POST "/:uri_slug" {{:keys [uri_slug title body] :as params} :params}
+    (when-let [page (find-page-by-uri-slug {:uri_slug uri_slug})]
+      (create-revision! {:page_id (:id page)
+                         :body body
+                         :title title})
+      (wiki-page params))))
