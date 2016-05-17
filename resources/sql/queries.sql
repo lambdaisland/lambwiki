@@ -21,13 +21,13 @@ DELETE FROM users
 WHERE id = :id
 
 -- :name create-page! :insert :raw
-INSERT INTO pages (uri_slug, title) VALUES (:uri_slug, :title)
+INSERT INTO pages (uri_slug) VALUES (:uri_slug)
 
 -- :name create-revision! :insert :raw
-INSERT INTO revisions (page_id, body) VALUES (:page_id, :body)
+INSERT INTO revisions (page_id, body, title) VALUES (:page_id, :body, :title)
 
 -- :name find-page-by-uri-slug :query :one
-SELECT pages.*, revisions.body
+SELECT pages.id, pages.uri_slug, revisions.body, revisions.title
 FROM pages, revisions
 WHERE pages.id = page_id
 AND uri_slug=:uri_slug
