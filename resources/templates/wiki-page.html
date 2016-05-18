@@ -2,7 +2,7 @@
 {% block content %}
 <div class="ui container">
   <h1 class="ui header">{{title}}</h1>
-  {{body|markdown}}
+  {{body|wiki-links|markdown}}
   <hr>
   <a class="ui button" href="/{{uri_slug}}/edit">Edit</a>
 </div>

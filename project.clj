@@ -28,7 +28,8 @@
                  [luminus-migrations "0.1.2"]
                  [conman "0.5.1"]
                  [org.postgresql/postgresql "9.4-1206-jdbc4"]
-                 [luminus-log4j "0.1.3"]]
+                 [luminus-log4j "0.1.3"]
+                 [hiccup "1.0.5"]]
 
   :min-lein-version "2.0.0"
 
