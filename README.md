@@ -1,8 +1,6 @@
 # lambwiki
 
-A simple wiki application as seen in the [Lambda Island](https://lambdaisland.com) episode [Introduction to Luminus, part 1](https://lambdaisland.com/episodes/introduction-luminus-1)
-
-<!-- and [part 2](https://lambdaisland.com/episodes/introduction-luminus-2). -->
+A simple wiki application as seen in the [Lambda Island](https://lambdaisland.com) episode [Introduction to Luminus, part 1](https://lambdaisland.com/episodes/introduction-luminus-1), [part 2](https://lambdaisland.com/episodes/introduction-luminus-2), and [part 3](https://lambdaisland.com/episodes/introduction-luminus-3).
 
 Assumes a PostgreSQL database. To run locally
 
